@@ -1,0 +1,16 @@
+importar  dirección IP
+
+REDES  = [
+    '127.2.56.0/30' ,
+    ]
+
+para  n  en  REDES :
+    net  =  direcciónip . ip_network ( n )
+    print ( '{! r}' . formato ( net ))
+    print ( 'es privado:' , net . is_private )
+    print ( 'emisión:' , net . broadcast_address )
+    print ( 'comprimido:' , net . comprimido )
+    print ( 'con máscara de red:' , net . con máscara_net )
+    print ( 'con máscara de host:' , net . con máscara_host )
+    print ( 'núm direcciones:' , net . núm_direcciones )
+    imprimir () 

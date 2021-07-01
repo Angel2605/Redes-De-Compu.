@@ -1,0 +1,18 @@
+importar  socket
+
+target_host  =  "www.google.com"
+target_port  =  80
+
+# crea un objeto socket
+cliente  =  socket . enchufe ( enchufe . AF_INET , enchufe . SOCK_STREAM )
+
+# conectar el cliente
+cliente . conectar (( target_host , target_port ))
+
+# enviar algunos datos
+cliente . enviar ( "GET / HTTP / 1.1 \ r \ n Host: google.com \ r \ n \ r \ n " )
+
+# recibir algunos datos
+respuesta  =  cliente . recv ( 4096 )
+
+ respuesta de impresión

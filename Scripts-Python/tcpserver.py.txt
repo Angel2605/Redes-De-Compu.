@@ -1,0 +1,22 @@
+importar  socket
+importar  subprocesos
+bind_ip  =  "0.0.0.0"
+bind_port  =  9999
+servidor  =  socket . enchufe ( enchufe . AF_INET , enchufe . SOCK_STREAM )
+servidor . enlazar (( bind_ip , bind_port ))
+servidor . escuchar ( 5 )
+print  "[*] Escuchando en% s:% d"  % ( bind_ip , bind_port )
+# este es nuestro hilo de gestión de clientes
+ def  handle_client ( client_socket ):
+ # imprime lo que envía el cliente
+ request  =  client_socket . recv ( 1024 )
+ imprimir  "[*] Recibido:% s"  %  solicitud
+ # enviar un paquete
+ client_socket . enviar ( "¡ACK!" )
+ client_socket . cerrar ()
+mientras que es  verdadero :
+ cliente , addr  =  servidor . aceptar ()
+ imprimir  "[*] Conexión aceptada de:% s:% d"  % ( addr [ 0 ], addr [ 1 ])
+ # gire el hilo de nuestro cliente para manejar los datos entrantes
+ manejador_cliente  =  subprocesamiento . Hilo ( objetivo = handle_client , args = ( cliente ,))
+ administrador_cliente . inicio ()
